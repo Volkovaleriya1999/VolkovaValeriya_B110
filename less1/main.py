@@ -1,16 +1,79 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+__author__ = 'Волкова Валерия Олеговна'
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# Задача-1: Ввести ваше имя и возраст в отдельные переменные,
+# вычесть из возраста 18 и вывести на экран в следующем виде:
+# "Василий на 2 года/лет больше 18"
+# по желанию сделать адаптивный вывод, то есть "на 5 лет больше", "на 3 года меньше" и.т.д.
+
+name = 'Валерия'
+age = 23
+age = age - 18
+print(f'{name} на {age} лет больше 18')
+
+# Задача-2: Исходные значения двух переменных запросить у пользователя.
+# Поменять значения переменных местами. Вывести новые значения на экран.
+# Подсказка:
+# * постарайтесь сделать решение через дополнительную переменную
+#   или через арифметические действия
+# Не нужно решать задачу так:
+# print("a = ", b, "b = ", a) - это неправильное решение!
+
+a = int(input('Введите первое число: '))
+b = int(input('Введите второе число: '))
+print('a = ', a, 'b = ', b)
+c = a
+a = b
+b = c
+print('a = ', a, 'b = ', b)
+
+# Задача-3: Напишите программу, вычисляющую корни квадратного уравнения вида
+# ax² + bx + c = 0.
+# Коэффициенты уравнения вводятся пользователем.
+# Для вычисления квадратного корня воспользуйтесь функцией sqrt() модуля math:
+# import math
+# math.sqrt(4) - вычисляет корень числа 4
+
+import math
+
+print('Введите коэффициенты для уравнения ax² + bx + c = 0 \n')
+a = float(input('a = '))
+b = float(input('b = '))
+c = float(input('c = '))
+
+d = b ** 2 - 4 * a * c
+
+print(f'Дискриминант равен: {d}')
+
+if d > 0:
+    x1 = (-b + math.sqrt(d)) / (2 * a)
+    x2 = (-b - math.sqrt(d)) / (2 * a)
+    print(f'x1 = {x1} \nx2 = {x2}')
+elif d == 0:
+    x = -b / (2 * a)
+    print(f'x = {x}')
+else:
+    print("Корней нет")
+
+# Ваня набрал несколько операций в интерпретаторе и получал результаты:
+# 	Код: a == a**2
+# 	Результат: True
+# 	Код: a == a*2
+# 	Результат: True
+# 	Код: a > 999999
+# 	Результат: True
+
+# Вопрос: Чему была равна переменная a,
+# если точно известно, что её значение не изменялось?
+
+a = 10e400 # число float(inf) бесконечное
+print(a)
+print(a == a**2)
+print(a == a*2)
+print(a > 999999)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+
+
